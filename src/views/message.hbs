@@ -1,0 +1,328 @@
+{{!--
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+        .generate {
+            width: 100%;
+            height: 100%;
+            /* background-color: #bdedff; */
+            background-image: url('ocean1.jpg');
+            min-height: 700px;
+        }
+
+        .bubble {
+            padding: 2% 30% 0% 30%;
+        }
+
+        .bubble6 {
+            position: relative;
+            width: auto;
+            height: auto;
+            background: #efefef;
+            border: 1px solid #a7a7a7;
+            border-radius: 4px;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, .2);
+            padding: 15px;
+            color: crimson;
+            font-size: 32px;
+        }
+
+        .bubble6-arrow {
+            position: absolute;
+            right: 15px;
+            bottom: -25px;
+            border-left: 21px solid transparent;
+            border-top: 20px solid rgba(0, 0, 0, .2);
+        }
+
+        .bubble6-arrow::before {
+            content: '';
+            position: absolute;
+            right: 5px;
+            bottom: 2px;
+            border-left: 23px solid transparent;
+            border-top: 23px solid #a7a7a7;
+        }
+
+        .bubble6-arrow::after {
+            content: '';
+            position: absolute;
+            right: 6px;
+            bottom: 4px;
+            border-left: 21px solid transparent;
+            border-top: 21px solid #efefef;
+        }
+
+        .img {
+            margin-left: 80%;
+            margin-top: -5%;
+            margin-bottom: 3%;
+        }
+
+        #mdiv {
+            width: 25px;
+            height: 25px;
+            /* background-color: red;
+            border: 1px solid black; */
+        }
+
+        .mdiv {
+            height: 25px;
+            width: 2px;
+            margin-left: 12px;
+            background-color: black;
+            transform: rotate(45deg);
+            Z-index: 1;
+        }
+
+        .md {
+            height: 25px;
+            width: 2px;
+            background-color: black;
+            transform: rotate(90deg);
+            Z-index: 2;
+        }
+
+        .button-align {
+            padding-top: 2%;
+            margin-left: 96%;
+        }
+
+        .text {
+            font-size: 36px;
+            font-family: 'Crimson Text';
+            color: darkmagenta;
+            text-align: center;
+        }
+
+        .text1 {
+            font-size: 28px;
+            font-weight: 500;
+            padding-bottom: 1%;
+            color: darkmagenta;
+            margin-top: 0%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='generate'>
+        <div class="button-align">
+            <div id="mdiv">
+                <div class="mdiv">
+                    <div class="md"></div>
+                </div>
+            </div>
+        </div>
+        <div class='bubble'>
+            <h2 class="text">Your message has been created!</h2>
+
+            <div class='bubble6'>
+                {{message}}
+                <div class='bubble6-arrow'>
+                </div>
+            </div>
+            <img src="dol.png" alt='dolphin' class='img' width="300px" height="300px">
+            <div class="text text1">Message will disappear in</div>
+            <div class="text text1" id="demo"></div>
+
+
+        </div>
+    </div>
+
+    <script>
+        var deadline = {{ expiry }}* 1000;
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var t = deadline - now;
+            var days = Math.floor(t / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((t % (1000 * 60)) / 1000);
+            if (days > 0)
+                document.getElementById("demo").innerHTML = days + "d "
+                    + hours + "h " + minutes + "m " + seconds + "s ";
+            else if (hours > 0)
+                document.getElementById("demo").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+            else if (minutes > 0)
+                document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s ";
+            else
+                document.getElementById("demo").innerHTML = seconds + "s ";
+            if (t < 0) {
+                clearInterval(x);
+                location.reload();
+            }
+        }, 1000); 
+    </script>
+
+</body>
+
+</html> --}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+        .generate {
+            width: 100%;
+            height: 100%;
+            background-color: #bdedff;
+            /* background-image: url('minionn.gif'); */
+            min-height: 700px;
+        }
+
+        .bubble {
+            padding: 2% 30% 0% 30%;
+        }
+
+        .bubble6 {
+            position: relative;
+            width: auto;
+            height: auto;
+            background: #efefef;
+            border: 1px solid #a7a7a7;
+            border-radius: 4px;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, .2);
+            padding: 15px;
+            color: black;
+            font-size: 32px;
+        }
+
+        .bubble6-arrow {
+            position: absolute;
+            right: 15px;
+            bottom: -25px;
+            border-left: 21px solid transparent;
+            border-top: 20px solid rgba(0, 0, 0, .2);
+        }
+
+        .bubble6-arrow::before {
+            content: '';
+            position: absolute;
+            right: 5px;
+            bottom: 2px;
+            border-left: 23px solid transparent;
+            border-top: 23px solid #a7a7a7;
+        }
+
+        .bubble6-arrow::after {
+            content: '';
+            position: absolute;
+            right: 6px;
+            bottom: 4px;
+            border-left: 21px solid transparent;
+            border-top: 21px solid #efefef;
+        }
+
+        .img {
+            margin-left: 80%;
+            margin-top: -5%;
+            margin-bottom: 3%;
+        }
+
+        #mdiv {
+            width: 25px;
+            height: 25px;
+            /* background-color: red;
+            border: 1px solid black; */
+        }
+
+        .mdiv {
+            height: 25px;
+            width: 2px;
+            margin-left: 12px;
+            background-color: black;
+            transform: rotate(45deg);
+            Z-index: 1;
+        }
+
+        .md {
+            height: 25px;
+            width: 2px;
+            background-color: black;
+            transform: rotate(90deg);
+            Z-index: 2;
+        }
+
+        .button-align {
+            padding-top: 2%;
+            margin-left: 96%;
+        }
+
+        .text {
+            font-size: 36px;
+            font-family: 'Crimson Text';
+            color: darkmagenta;
+            text-align: center;
+        }
+
+        .text1 {
+            font-size: 28px;
+            font-weight: 500;
+            padding-bottom: 1%;
+            color: darkmagenta;
+            margin-top: 0%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='generate'>
+        <div class="button-align">
+            <div id="mdiv">
+                <div class="mdiv">
+                    <div class="md"></div>
+                </div>
+            </div>
+        </div>
+        <div class='bubble'>
+            <h2 class="text">This the message for you!</h2>
+
+            <div class='bubble6'>
+                {{message}}
+
+
+                <div class='bubble6-arrow'>
+                </div>
+            </div>
+            <img src="minionn.gif" class='img' width="300px" height="300px">
+            <p class="text text1">Message will disappear in </p>
+            <div class="text text1" id="demo"></div>
+        </div>
+    </div>
+    <script>
+        var deadline = {{ expiry }}* 1000;
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var t = deadline - now;
+            var days = Math.floor(t / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((t % (1000 * 60)) / 1000);
+            if (days > 0)
+                document.getElementById("demo").innerHTML = days + "d "
+                    + hours + "h " + minutes + "m " + seconds + "s ";
+            else if (hours > 0)
+                document.getElementById("demo").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+            else if (minutes > 0)
+                document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s ";
+            else
+                document.getElementById("demo").innerHTML = seconds + "s ";
+            if (t < 0) {
+                clearInterval(x);
+                location.reload();
+            }
+        }, 1000); 
+    </script>
+
+</body>
+
+</html>
